@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { distinctUntilChanged, filter, switchMap, tap } from 'rxjs/operators';
+import { Cart } from '../../model/cart.model';
 import { OrderEntry } from '../../model/order.model';
+import { LoaderState } from '../../state/utils/loader/loader-state';
 import { CartActions } from '../store/actions/index';
 import { StateWithMultiCart } from '../store/multi-cart-state';
 import { MultiCartSelectors } from '../store/selectors/index';
-import { LoaderState } from '../../state/utils/loader/loader-state';
-import { Cart } from '../../model/cart.model';
 
 @Injectable()
 export class MultiCartService {
+  private wishListId$ = this.store.pipe(
+    select(MultiCartSelectors.getWishListId)
+  );
   constructor(protected store: Store<StateWithMultiCart>) {}
 
   /**
@@ -231,12 +235,29 @@ export class MultiCartService {
    * @param cartId
    * @param userId
    */
-  deleteCart(cartId: string, userId: string) {
+  deleteCart(cartId: string, userId: string): void {
     this.store.dispatch(
       new CartActions.DeleteCart({
         userId,
         cartId,
       })
     );
+  }
+
+  getWishList(): Observable<Cart> {
+    return this.wishListId$.pipe(
+      distinctUntilChanged(),
+      tap(id => {
+        if (!Boolean(id)) {
+          this.loadWishList('current');
+        }
+      }),
+      filter(id => !!id),
+      switchMap(id => this.getCart(id))
+    );
+  }
+
+  loadWishList(userId: string): void {
+    this.store.dispatch(new CartActions.LoadWisthList(userId));
   }
 }

@@ -1,14 +1,14 @@
 import { Action } from '@ngrx/store';
-import { MULTI_CART_FEATURE } from '../multi-cart-state';
+import { Cart } from '../../../model/cart.model';
 import {
-  EntityLoadAction,
-  EntitySuccessAction,
   EntityFailAction,
+  EntityLoadAction,
   EntityResetAction,
+  EntitySuccessAction,
 } from '../../../state/utils/entity-loader/entity-loader.action';
 import { EntityRemoveAction } from '../../../state/utils/entity/entity.action';
 import { getCartIdByUserId } from '../../utils/utils';
-import { Cart } from '../../../model/cart.model';
+import { MULTI_CART_FEATURE } from '../multi-cart-state';
 
 export const RESET_FRESH_CART = '[Multi Cart] Reset Fresh Cart';
 
@@ -34,6 +34,10 @@ export const REMOVE_CART = '[Multi Cart] Remove Cart';
 export const ADD_EMAIL_TO_MULTI_CART = '[Multi Cart] Add Email';
 export const ADD_EMAIL_TO_MULTI_CART_FAIL = '[Multi Cart] Add Email Fail';
 export const ADD_EMAIL_TO_MULTI_CART_SUCCESS = '[Multi Cart] Add Email Success';
+
+export const LOAD_WISH_LIST = '[Multi Cart] Load Wish List';
+export const LOAD_WISH_LIST_FAIL = '[Multi Cart] Load Wish List Fail';
+export const LOAD_WISH_LIST_SUCCESS = '[Multi Cart] Load Wish List Success';
 
 export class ResetFreshCart extends EntityResetAction {
   readonly type = RESET_FRESH_CART;
@@ -150,6 +154,27 @@ export class AddEmailToMultiCartSuccess extends EntitySuccessAction {
   }
 }
 
+export class LoadWisthList extends EntityLoadAction {
+  readonly type = LOAD_WISH_LIST;
+  constructor(public payload: string) {
+    super(MULTI_CART_FEATURE, payload);
+  }
+}
+
+export class LoadWisthListFail extends EntityFailAction {
+  readonly type = LOAD_WISH_LIST_FAIL;
+  constructor(public payload: { cartId: string; error?: any }) {
+    super(MULTI_CART_FEATURE, payload.cartId, payload.error);
+  }
+}
+
+export class LoadWisthListSuccess extends EntitySuccessAction {
+  readonly type = LOAD_WISH_LIST_SUCCESS;
+  constructor(public payload: { cart: Cart; userId: string; extraData?: any }) {
+    super(MULTI_CART_FEATURE, getCartIdByUserId(payload.cart, payload.userId));
+  }
+}
+
 export type MultiCartActions =
   | ResetFreshCart
   | SetFreshCart
@@ -166,4 +191,7 @@ export type MultiCartActions =
   | RemoveCart
   | AddEmailToMultiCart
   | AddEmailToMultiCartFail
-  | AddEmailToMultiCartSuccess;
+  | AddEmailToMultiCartSuccess
+  | LoadWisthList
+  | LoadWisthListFail
+  | LoadWisthListSuccess;

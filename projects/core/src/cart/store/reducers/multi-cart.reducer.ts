@@ -1,6 +1,6 @@
-import { CartActions } from '../actions/index';
-import { LoaderAction } from '../../../state/utils/loader/loader.action';
 import { Cart } from '../../../model/cart.model';
+import { LoaderAction } from '../../../state/utils/loader/loader.action';
+import { CartActions } from '../actions/index';
 
 export const activeCartInitialState = '';
 
@@ -33,6 +33,17 @@ export function activeCartReducer(
   return state;
 }
 
+export function wishListReducer(
+  state = activeCartInitialState,
+  action: CartActions.MultiCartActions
+): string {
+  switch (action.type) {
+    case CartActions.LOAD_WISH_LIST_SUCCESS:
+      return action.meta.entityId as string;
+  }
+  return state;
+}
+
 export const cartEntitiesInitialState = undefined;
 
 export function cartEntitiesReducer(
@@ -42,6 +53,7 @@ export function cartEntitiesReducer(
   switch (action.type) {
     case CartActions.LOAD_MULTI_CART_SUCCESS:
     case CartActions.CREATE_MULTI_CART_SUCCESS:
+    case CartActions.LOAD_WISH_LIST_SUCCESS:
       return action.payload.cart;
     case CartActions.SET_FRESH_CART:
       return action.payload;

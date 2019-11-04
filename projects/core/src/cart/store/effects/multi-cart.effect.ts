@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Observable } from 'rxjs';
-import { map, mergeMap } from 'rxjs/operators';
+import { map, mergeMap, switchMap } from 'rxjs/operators';
+import { CartConnector } from '../../connectors/cart/cart.connector';
 import { CartActions } from '../actions/index';
 
 @Injectable()
@@ -74,5 +75,33 @@ export class MultiCartEffects {
     ])
   );
 
-  constructor(private actions$: Actions) {}
+  @Effect()
+  loadWishList$ = this.actions$.pipe(
+    ofType(CartActions.LOAD_WISH_LIST),
+    map((action: CartActions.LoadWisthList) => action.payload),
+    mergeMap(userId => {
+      return this.cartConnector.loadAll(userId).pipe(
+        switchMap(carts => {
+          if (carts) {
+            const wishList = carts.find(cart => cart.name === 'wishlist');
+            if (!!wishList) {
+              return [
+                new CartActions.LoadWisthListSuccess({
+                  cart: wishList,
+                  userId,
+                }),
+              ];
+            } else {
+              return [new CartActions.LoadWisthListFail({ cartId: 'yolo' })];
+            }
+          }
+        })
+      );
+    })
+  );
+
+  constructor(
+    private actions$: Actions,
+    private cartConnector: CartConnector
+  ) {}
 }

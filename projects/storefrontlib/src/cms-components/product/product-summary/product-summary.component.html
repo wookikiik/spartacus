@@ -23,4 +23,14 @@
           </a>
         </div>
       </ng-container> -->
+  <div *ngIf="wishListEntries$ | async as entries">
+    <div
+      *ngIf="wishListContainsProduct(product, entries) as entry; else addItem"
+    >
+      <button (click)="removeFromWishList(entry)">Remove from wish list</button>
+    </div>
+    <ng-template #addItem>
+      <button (click)="addToWishList(product)">Add to wish list</button>
+    </ng-template>
+  </div>
 </ng-container>
