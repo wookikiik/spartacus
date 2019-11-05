@@ -42,12 +42,12 @@ export class ProductSummaryComponent implements OnInit {
   }
 
   addToWishList(product: Product) {
-    this.multicartService.addEntries('current', '00000039', [
+    this.multicartService.addEntries('current', '00000042', [
       { productCode: product.code, quantity: 1 },
     ]);
   }
 
   removeFromWishList(entry: OrderEntry) {
-    this.multicartService.removeEntry('current', '00000039', entry.entryNumber);
+    this.multicartService.removeEntry('current', '00000042', entry.entryNumber);
   }
 }
