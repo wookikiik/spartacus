@@ -9,6 +9,7 @@ import {
   fillShippingAddress,
   PaymentDetails,
 } from './checkout-forms';
+import { prefixAndBaseSite } from './constants/backend';
 import { generateMail, randomString } from './user';
 
 interface TestProduct {
@@ -59,7 +60,7 @@ export function waitForGetWishList() {
 
   cy.route(
     'GET',
-    `/rest/v2/electronics-spa/users/*/carts/*?fields=*&lang=en&curr=USD`
+    `${prefixAndBaseSite}/users/*/carts/*?fields=*&lang=en&curr=USD`
   ).as('get_wish_list');
 }
 
@@ -147,7 +148,7 @@ export function addProductToCart(product: TestProduct) {
 
   cy.route(
     'POST',
-    `/rest/v2/electronics-spa/users/*/carts/*/entries?code=*&qty=*&lang=en&curr=USD`
+    `${prefixAndBaseSite}/users/*/carts/*/entries?code=*&qty=*&lang=en&curr=USD`
   ).as('add_to_cart');
 
   getWishListItem(product.name).within(() => {
