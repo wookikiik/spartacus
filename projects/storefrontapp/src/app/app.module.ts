@@ -37,6 +37,7 @@ if (!environment.production) {
         occ: {
           baseUrl: environment.occBaseUrl,
           legacy: false,
+          prefix: '/occ/v2/',
         },
       },
       context: {
