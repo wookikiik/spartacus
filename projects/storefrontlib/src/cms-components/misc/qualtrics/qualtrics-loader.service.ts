@@ -16,6 +16,7 @@ export class QualtricsLoaderService {
       Boolean(this.winRef.document) &&
       this.isQualtricsConfigured()
     ) {
+      console.log('initialized ctor');
       this.initialize();
       this.setup();
     }
