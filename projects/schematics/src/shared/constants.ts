@@ -180,6 +180,7 @@ export const PRODUCT_REVIEWS_COMPONENT = `ProductReviewsComponent`;
 export const SEARCH_BOX_COMPONENT = `SearchBoxComponent`;
 export const ADDRESS_BOOK_COMPONENT = `AddressBookComponent`;
 export const PAYMENT_FORM_COMPONENT = 'PaymentFormComponent';
+export const AMEND_ORDER_ACTIONS_COMPONENT = 'AmendOrderActionsComponent';
 export const COMPONENT_WRAPPER_DIRECTIVE = 'ComponentWrapperDirective';
 export const CMS_MAPPING_SERVICE = 'CmsMappingService';
 export const COMPONENT_HANDLER_SERVICE = 'ComponentHandlerService';
@@ -198,6 +199,9 @@ export const STORE_FINDER_LIST_ITEM_COMPONENT = 'StoreFinderListItemComponent';
 export const CART_CONFIG_SERVICE = 'CartConfigService';
 export const MULTI_CART_SERVICE = 'MultiCartService';
 export const BASE_SITE_SERVICE = 'BaseSiteService';
+export const QUALTRICS_LOADER_SERVICE = 'QualtricsLoaderService';
+export const RENDERER_FACTORY_2 = 'RendererFactory2';
+export const QUALTRICS_CONFIG = 'QualtricsConfig';
 /***** Classes end *****/
 
 /***** Removed public api start *****/

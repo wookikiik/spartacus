@@ -1,12 +1,23 @@
 import { Component } from '@angular/core';
+import { QualtricsConfig } from './config/qualtrics-config';
 import { QualtricsLoaderService } from './qualtrics-loader.service';
 
+/**
+ * Adds the Qualtrics deloyment script whenever the component is loaded. The
+ * deployment script is loaded from the global configuration (`qualtrics.scriptSource`).
+ *
+ * The script is added when the route `NavigationEnd` occurs, so that the script is (re)added
+ * if the component is not re-rendered on the page.
+ */
 @Component({
   selector: 'cx-qualtrics',
-  template: ` <ng-container *ngIf="qualtricsEnabled$ | async"></ng-container> `,
+  template: ``,
 })
 export class QualtricsComponent {
-  qualtricsEnabled$ = this.qualtricsLoader.load();
-
-  constructor(private qualtricsLoader: QualtricsLoaderService) {}
+  constructor(
+    protected qualtricsLoader: QualtricsLoaderService,
+    protected config: QualtricsConfig
+  ) {
+    this.qualtricsLoader.addScript(this.config.qualtrics.scriptSource);
+  }
 }

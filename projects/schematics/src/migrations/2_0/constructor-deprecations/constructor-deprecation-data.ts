@@ -3,6 +3,7 @@ import { ADD_TO_CART_COMPONENT_MIGRATION } from './data/add-to-cart.component.mi
 import { ADDED_TO_CART_DIALOG_COMPONENT_MIGRATIONS } from './data/added-to-cart-dialog.component.migration';
 import { ADDRESS_BOOK_COMPONENT_MIGRATION } from './data/address-book.component.migration';
 import { ADDRESS_BOOK_COMPONENT_SERVICE_MIGRATIONS } from './data/address-book.component.service.migration';
+import { AMEND_ORDER_ACTIONS_COMPONENT_MIGRATION } from './data/amend-order-actions.component.migration';
 import { CART_COUPON_COMPONENT_MIGRATIONS } from './data/cart-coupon.component.migration';
 import { CART_DETAILS_COMPONENT_MIGRATIONS } from './data/cart-details.component.migration';
 import { CART_ITEM_LIST_COMPONENT_MIGRATIONS } from './data/cart-item-list.component.migration';
@@ -52,6 +53,8 @@ import { PRODUCT_LIST_COMPONENT_MIGRATION } from './data/product-list.component.
 import { PRODUCT_REVIEWS_COMPONENT_MIGRATION } from './data/product-reviews.component.migration';
 import { PRODUCT_SERVICE_MIGRATION } from './data/product-service.migration';
 import { PROMOTION_SERVICE_MIGRATION } from './data/promotion.service.migration';
+import { QUALTRICS_LOADER_MIGRATION } from './data/qualtrics-loader.service.migration';
+import { QUALTRICS_COMPONENT_MIGRATION } from './data/qualtrics.component.migration';
 import { REGISTER_COMPONENT_MIGRATIONS } from './data/register.component.migration';
 import { REVIEW_SUBMIT_COMPONENT_MIGRATIONS } from './data/review-submit.component.migration';
 import { SEARCH_BOX_COMPONENT_MIGRATION } from './data/search-box.component.migration';
@@ -139,10 +142,13 @@ export const CONSTRUCTOR_DEPRECATION_DATA: ConstructorDeprecation[] = [
   SEARCH_BOX_COMPONENT_MIGRATION,
   ADDRESS_BOOK_COMPONENT_MIGRATION,
   PAYMENT_FORM_COMPONENT_MIGRATION,
+  AMEND_ORDER_ACTIONS_COMPONENT_MIGRATION,
   COMPONENT_WRAPPER_DIRECTIVE_MIGRATION,
   DYNAMIC_ATTRIBUTE_SERVICE_MIGRATION,
   STORE_FINDER_SEARCH_RESULT_COMPONENT_MIGRATION,
   TAB_PARAGRAPH_CONTAINER_COMPONENT_MIGRATION,
   STORE_FINDER_LIST_ITEM_MIGRATION,
   SELECTIVE_CART_SERVICE_MIGRATION,
+  QUALTRICS_LOADER_MIGRATION,
+  QUALTRICS_COMPONENT_MIGRATION,
 ];

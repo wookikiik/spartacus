@@ -72,9 +72,6 @@ if (!environment.production) {
           enabled: true,
         },
       },
-      qualtrics: {
-        projectId: 'ZN_4YMgmJ7Zx9BDxM9',
-      },
     }),
     JsonLdBuilderModule,
 
