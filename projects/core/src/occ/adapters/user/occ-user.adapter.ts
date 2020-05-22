@@ -26,7 +26,7 @@ export class OccUserAdapter implements UserAdapter {
   ) {}
 
   load(userId: string): Observable<User> {
-    const url = this.occEndpoints.getUrl('user', { userId });
+    const url = this.occEndpoints.getUrl('b2bUser', { userId });
     return this.http
       .get<Occ.User>(url)
       .pipe(this.converter.pipeable(USER_NORMALIZER));

@@ -364,4 +364,5 @@ export interface OccEndpoints {
    * Endpoint for cancelling return request
    */
   cancelReturn?: string | OccEndpoint;
+  b2bUser?: string | OccEndpoint;
 }

@@ -5,8 +5,8 @@ export const defaultOccUserConfig: OccConfig = {
     occ: {
       endpoints: {
         // tslint:disable:max-line-length
-        // user: 'users/${userId}',
-        user: 'orgUsers/${userId}',
+        user: 'users/${userId}',
+        b2bUser: 'orgUsers/${userId}',
         userRegister: 'users',
         userForgotPassword: 'forgottenpasswordtokens',
         userResetPassword: 'resetpassword',
