@@ -11,7 +11,8 @@ export const defaultOccCartConfig: OccConfig = {
           'users/${userId}/carts/${cartId}?fields=DEFAULT,potentialProductPromotions,appliedProductPromotions,potentialOrderPromotions,appliedOrderPromotions,entries(totalPrice(formattedValue),product(images(FULL),stock(FULL)),basePrice(formattedValue,value),updateable),totalPrice(formattedValue),totalItems,totalPriceWithTax(formattedValue),totalDiscounts(value,formattedValue),subTotal(formattedValue),deliveryItemsQuantity,deliveryCost(formattedValue),totalTax(formattedValue, value),pickupItemsQuantity,net,appliedVouchers,productDiscounts(formattedValue),user',
         createCart:
           'users/${userId}/carts?fields=DEFAULT,potentialProductPromotions,appliedProductPromotions,potentialOrderPromotions,appliedOrderPromotions,entries(totalPrice(formattedValue),product(images(FULL),stock(FULL)),basePrice(formattedValue,value),updateable),totalPrice(formattedValue),totalItems,totalPriceWithTax(formattedValue),totalDiscounts(value,formattedValue),subTotal(formattedValue),deliveryItemsQuantity,deliveryCost(formattedValue),totalTax(formattedValue, value),pickupItemsQuantity,net,appliedVouchers,productDiscounts(formattedValue),user',
-        addEntries: 'users/${userId}/carts/${cartId}/entries',
+        // addEntries: 'users/${userId}/carts/${cartId}/entries',
+        addEntries: 'orgUsers/${userId}/carts/${cartId}/entries',
         updateEntries: 'users/${userId}/carts/${cartId}/entries/${entryNumber}',
         removeEntries: 'users/${userId}/carts/${cartId}/entries/${entryNumber}',
         addEmail: 'users/${userId}/carts/${cartId}/email',

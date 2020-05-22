@@ -47,6 +47,7 @@ if (!environment.production) {
           'apparel-de',
           'apparel-uk',
           'apparel-uk-spa',
+          'powertools-spa',
         ],
       },
 

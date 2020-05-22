@@ -33,8 +33,13 @@ export class OccCheckoutAdapter implements CheckoutAdapter {
     return this.occEndpoints.getEndpoint(orderEndpoint);
   }
 
+  protected getOrgEndpoint(userId: string, subEndpoint: string): string {
+    const orderEndpoint = 'orgUsers/' + userId + subEndpoint;
+    return this.occEndpoints.getEndpoint(orderEndpoint);
+  }
+
   public placeOrder(userId: string, cartId: string): Observable<Order> {
-    const url = this.getEndpoint(userId, ORDERS_ENDPOINT);
+    const url = this.getOrgEndpoint(userId, ORDERS_ENDPOINT);
     const params = new HttpParams({
       fromString: 'cartId=' + cartId + '&' + FULL_PARAMS,
     });

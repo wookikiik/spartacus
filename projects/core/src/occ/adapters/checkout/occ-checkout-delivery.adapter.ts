@@ -27,6 +27,11 @@ export class OccCheckoutDeliveryAdapter implements CheckoutDeliveryAdapter {
     return this.occEndpoints.getEndpoint(cartEndpoint);
   }
 
+  protected getOrgCartEndpoint(userId: string): string {
+    const orgCartEndpoint = 'orgUsers/' + userId + '/carts/';
+    return this.occEndpoints.getEndpoint(orgCartEndpoint);
+  }
+
   public createAddress(
     userId: string,
     cartId: string,
@@ -51,7 +56,7 @@ export class OccCheckoutDeliveryAdapter implements CheckoutDeliveryAdapter {
     addressId: string
   ): Observable<any> {
     return this.http.put(
-      this.getCartEndpoint(userId) + cartId + '/addresses/delivery',
+      this.getOrgCartEndpoint(userId) + cartId + '/addresses/delivery',
       {},
       {
         params: { addressId: addressId },
