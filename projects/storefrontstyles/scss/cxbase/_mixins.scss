@@ -1,8 +1,8 @@
-/** 
+/**
  * the mixins depend on variables, mainly because of some
  * lower level bootstrap variables. Hence we import the variables here,
  * to make the mixins resuable. In order to have the right variables
- * we load variables through the theme import. 
+ * we load variables through the theme import.
  */
 @import '../theme';
 
@@ -15,4 +15,7 @@
 @import './mixins/placeholder';
 @import './mixins/transformations';
 @import './mixins/checkout-media-style';
+
+// override global css properties
 @import './mixins/visible-focus';
+// @import './../../../storefrontlib/src/spartatown-a11y/custom-focus/custom-focus';

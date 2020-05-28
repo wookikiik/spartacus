@@ -1,0 +1,7 @@
+@mixin visible-focus {
+  outline-style: dotted;
+  outline-color: var(--cx-color-visual-focus);
+  outline-width: 6px;
+  outline-offset: 10px;
+  transition: 0.3s;
+}

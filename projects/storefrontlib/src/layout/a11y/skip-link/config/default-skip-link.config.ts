@@ -11,5 +11,9 @@ export const defaultSkipLinkConfig: SkipLinkConfig = {
       i18nKey: 'skipLink.labels.main',
     },
     { key: 'cx-footer', i18nKey: 'skipLink.labels.footer' },
+    {
+      key: 'cx-custom-skip-link',
+      i18nKey: 'skipLink.labels.customSkiplink',
+    },
   ],
 };

@@ -13,6 +13,7 @@ import { AnonymousConsentsDialogModule } from '../../shared/components/anonymous
 import { KeyboardFocusModule } from '../a11y/keyboard-focus/keyboard-focus.module';
 import { SkipLinkModule } from '../a11y/skip-link/skip-link.module';
 import { StorefrontComponent } from './storefront.component';
+import { CustomFormModule } from '../../spartatown-a11y/custom-form/custom-form.component.module';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { StorefrontComponent } from './storefront.component';
 
     SkipLinkModule,
     KeyboardFocusModule,
+    CustomFormModule
   ],
   declarations: [StorefrontComponent],
   exports: [StorefrontComponent],

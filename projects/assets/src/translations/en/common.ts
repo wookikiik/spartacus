@@ -121,6 +121,7 @@ export const common = {
       footer: 'Footer',
       productFacets: 'Product Facets',
       productList: 'Product List',
+      customSkiplink: 'Custom skip link'
     },
   },
   formErrors: {
