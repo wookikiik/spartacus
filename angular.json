@@ -172,7 +172,7 @@
       "prefix": "cx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:build",
           "options": {
             "tsConfig": "projects/storefrontlib/tsconfig.lib.json",
             "project": "projects/storefrontlib/ng-package.json"
@@ -252,7 +252,7 @@
       "prefix": "cx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:build",
           "options": {
             "tsConfig": "projects/vendor/tsconfig.lib.json",
             "project": "projects/vendor/ng-package.json"
@@ -290,7 +290,7 @@
       "prefix": "cx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:build",
           "options": {
             "tsConfig": "projects/assets/tsconfig.lib.json",
             "project": "projects/assets/ng-package.json"
@@ -328,7 +328,7 @@
       "prefix": "cx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:build",
           "options": {
             "tsConfig": "projects/incubator/tsconfig.lib.json",
             "project": "projects/incubator/ng-package.json"
@@ -366,7 +366,7 @@
       "prefix": "cx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:build",
           "options": {
             "tsConfig": "projects/cds/tsconfig.lib.json",
             "project": "projects/cds/ng-package.json"
@@ -404,7 +404,7 @@
       "prefix": "cx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:build",
           "options": {
             "tsConfig": "feature-libs/my-account/tsconfig.lib.json",
             "project": "feature-libs/my-account/ng-package.json"
@@ -442,7 +442,7 @@
       "prefix": "cx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:build",
           "options": {
             "tsConfig": "feature-libs/product/tsconfig.lib.json",
             "project": "feature-libs/product/ng-package.json"
@@ -480,7 +480,7 @@
       "prefix": "cx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:build",
           "options": {
             "tsConfig": "integration-libs/cdc/tsconfig.lib.json",
             "project": "integration-libs/cdc/ng-package.json"
@@ -518,7 +518,7 @@
       "prefix": "cx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:build",
           "options": {
             "tsConfig": "core-libs/setup/tsconfig.lib.json",
             "project": "core-libs/setup/ng-package.json"
