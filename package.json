@@ -17,6 +17,7 @@
     "e2e:cy:run:ci:all": "yarn --cwd ./projects/storefrontapp-e2e-cypress run cy:run:ci:all",
     "e2e:cy:run:ci:1905": "yarn --cwd ./projects/storefrontapp-e2e-cypress run cy:run:ci:1905",
     "e2e:cy:run:ci:2005": "yarn --cwd ./projects/storefrontapp-e2e-cypress run cy:run:ci:2005",
+    "e2e:cy:run:ci:2011": "yarn --cwd ./projects/storefrontapp-e2e-cypress run cy:run:ci:2011",
     "e2e:cy:run:ci:ccv2": "yarn --cwd ./projects/storefrontapp-e2e-cypress run cy:run:ci:ccv2",
     "e2e:cy:run:smoke": "yarn --cwd ./projects/storefrontapp-e2e-cypress run cy:run:smoke",
     "e2e:cy:run:smoke:ci:1905": "yarn --cwd ./projects/storefrontapp-e2e-cypress run cy:run:smoke:ci:1905",
@@ -50,6 +51,7 @@
     "start": "ng serve",
     "start:ci:1905": "cross-env SPARTACUS_BASE_URL=https://spartacus-legacy.eastus.cloudapp.azure.com:9002 SPARTACUS_API_PREFIX=/rest/v2/ yarn start:prod",
     "start:ci:2005": "cross-env SPARTACUS_BASE_URL=https://spartacus-dev0.eastus.cloudapp.azure.com:9002 SPARTACUS_API_PREFIX=/occ/v2/ yarn start:prod",
+    "start:ci:2011": "cross-env SPARTACUS_BASE_URL=https://spartacus-dev4.eastus.cloudapp.azure.com:9002 SPARTACUS_API_PREFIX=/occ/v2/ yarn start:prod",
     "start:ci:ccv2": "cross-env SPARTACUS_BASE_URL=https://spartacus-demo.eastus.cloudapp.azure.com:8443 yarn start:prod",
     "start:prod": "ng serve --prod",
     "start:ssl": "ng serve --ssl",
@@ -101,9 +103,13 @@
     "build:b2b": "cross-env SPARTACUS_B2B=true ng build storefrontapp --prod",
     "e2e:cy:run:b2b": "yarn --cwd ./projects/storefrontapp-e2e-cypress run cy:run:b2b",
     "e2e:cy:run:b2b:ci": "yarn --cwd ./projects/storefrontapp-e2e-cypress run cy:run:b2b:ci",
+    "e2e:cy:run:b2b:ci:2011": "yarn --cwd ./projects/storefrontapp-e2e-cypress run cy:run:b2b:ci:2011",
     "e2e:cy:b2b:start-run-ci:2005": "start-server-and-test start:ci:b2b http-get://localhost:4200 e2e:cy:run:b2b:ci",
     "start:ci:b2b": "cross-env SPARTACUS_BASE_URL=https://spartacus-dev0.eastus.cloudapp.azure.com:9002 SPARTACUS_API_PREFIX=/occ/v2/ SPARTACUS_B2B=true yarn start:prod",
-    "e2e:cy:open:b2b": "yarn --cwd ./projects/storefrontapp-e2e-cypress run cy:open:b2b"
+    "start:ci:b2b:2011": "cross-env SPARTACUS_BASE_URL=https://spartacus-dev4.eastus.cloudapp.azure.com:9002 SPARTACUS_API_PREFIX=/occ/v2/ SPARTACUS_B2B=true yarn start:prod",
+    "e2e:cy:open:b2b": "yarn --cwd ./projects/storefrontapp-e2e-cypress run cy:open:b2b",
+    "e2e:cy:start-run-ci:2011": "start-server-and-test start:ci:2011 http-get://localhost:4200 e2e:cy:run:ci:2011",
+    "e2e:cy:b2b:start-run-ci:2011": "start-server-and-test start:ci:b2b:2011 http-get://localhost:4200 e2e:cy:run:b2b:ci:2011"
   },
   "private": false,
   "dependencies": {
