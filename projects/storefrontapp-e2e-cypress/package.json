@@ -22,7 +22,7 @@
     "cy:run:smoke:ci:ccv2": "cypress run --config-file cypress.ci.ccv2.json --record --key $CYPRESS_KEY --tag \"ccv2,smoke\" --spec \"cypress/integration/smoke/**/*\"",
     "cy:run:b2b": "cypress run --config-file cypress.ci.2005.json --env BASE_SITE=powertools-spa,B2B=true,OCC_PREFIX_USER_ENDPOINT=orgUsers --spec \"cypress/integration/b2b/**/*\"",
     "cy:run:b2b:ci": "cypress run --config-file cypress.ci.2005.json --env BASE_SITE=powertools-spa,B2B=true,OCC_PREFIX_USER_ENDPOINT=orgUsers --record --key $CYPRESS_KEY --tag \"2005,b2b\" --spec \"cypress/integration/b2b/**/*\"",
-    "cy:run:b2b:ci:2011": "cypress run --config-file cypress.ci.2011.json --env BASE_SITE=powertools-spa,B2B=true,OCC_PREFIX_USER_ENDPOINT=orgUsers --record --key $CYPRESS_KEY --tag \"2005,b2b\" --spec \"cypress/integration/b2b/**/*\"",
+    "cy:run:b2b:ci:2011": "cypress run --config-file cypress.ci.2011.json --env BASE_SITE=powertools-spa,B2B=true,OCC_PREFIX_USER_ENDPOINT=orgUsers --record --key $CYPRESS_KEY --tag \"2011,b2b\" --spec \"cypress/integration/b2b/**/*\"",
     "cy:open:b2b": "cypress open --config-file cypress.ci.2005.json --env BASE_SITE=powertools-spa,B2B=true,OCC_PREFIX_USER_ENDPOINT=orgUsers --config testFiles=**/b2b/**/*"
   },
   "devDependencies": {
