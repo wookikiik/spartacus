@@ -1,5 +1,5 @@
 import * as asm from '../../helpers/asm';
-context('ASM - Desktop', () => {
+context.skip('ASM - Desktop', () => {
   before(() => {
     cy.window().then((win) => win.sessionStorage.clear());
   });
