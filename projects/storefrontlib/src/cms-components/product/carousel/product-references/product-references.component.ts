@@ -11,7 +11,7 @@ import { CmsComponentData } from '../../../../cms-structure/page/model/cms-compo
 import { CurrentProductService } from '../../current-product.service';
 
 @Component({
-  selector: 'cx-product-references',
+  selector: 'cx-testing-qualtrics',
   templateUrl: './product-references.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
